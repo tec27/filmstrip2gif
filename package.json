@@ -1,6 +1,6 @@
 {
   "name": "filmstrip2gif",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Browser module for converting a filmstrip image into a GIF file.",
   "main": "index.js",
   "scripts": {
