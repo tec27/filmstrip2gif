@@ -27,7 +27,6 @@ module.exports = function(imgSrc, duration, numFrames, isHorizontal, cb) {
     try {
       var width = recordingElem.width
         , height = recordingElem.height
-      gifCreator.setSize(width, height)
       canvas.width = width
       canvas.height = height
       context.drawImage(recordingElem, 0, 0)
@@ -36,6 +35,7 @@ module.exports = function(imgSrc, duration, numFrames, isHorizontal, cb) {
         , frameHeight = isHorizontal ? height : (height / numFrames)
         , xInc = isHorizontal ? frameWidth : 0
         , yInc = isHorizontal ? 0 : frameHeight
+      gifCreator.setSize(frameWidth, frameHeight)
       for (var i = 0; i < numFrames; i++) {
         var sx = i * xInc
           , sy = i * yInc
