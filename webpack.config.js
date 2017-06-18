@@ -9,8 +9,7 @@ module.exports = {
   },
 
   externals: [
-    'animated_gif',
-    /^animated_gif\/.+$/,
+    /^animated_gif(\/.+)?$/,
     'data-uri-to-blob',
   ],
 }

@@ -1,8 +1,6 @@
-import workerScriptSrc from 'raw-loader!animated_gif/src/Animated_GIF.worker.js'
-import AnimatedGif from 'animated_gif'
+// We use the minified version because it has the web worker inlined
+import AnimatedGif from 'animated_gif/dist/Animated_GIF.min.js'
 import toBlob from 'data-uri-to-blob'
-
-var workerScriptBlob = new Blob([ workerScriptSrc ], { type: 'text/javascript' })
 
 export default function(imgSrc, duration, numFrames, isHorizontal, cb) {
   var frameDuration = duration / numFrames
