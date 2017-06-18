@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "Browser module for converting a filmstrip image into a GIF file.",
   "main": "dist/index.js",
+  "module": "index.js",
   "scripts": {
-    "build": "webpack --output-library-target=umd --optimize-minimize index.js dist/index.js",
+    "build": "webpack --config webpack.config.js index.js dist/index.js",
     "prepare": "npm run build"
   },
   "repository": {
