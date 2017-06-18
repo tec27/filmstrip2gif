@@ -22,10 +22,12 @@
     "url": "https://github.com/tec27/filmstrip2gif/issues"
   },
   "homepage": "https://github.com/tec27/filmstrip2gif",
-  "devDependencies": {
+  "dependencies": {
     "animated_gif": "^1.0.2",
     "data-uri-to-blob": "0.0.4",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "^0.5.1"
+  },
+  "devDependencies": {
     "webpack": "^2.6.1"
   }
 }
