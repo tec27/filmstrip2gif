@@ -2,9 +2,10 @@
   "name": "filmstrip2gif",
   "version": "1.0.2",
   "description": "Browser module for converting a filmstrip image into a GIF file.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --output-library-target=umd --optimize-minimize index.js dist/index.js",
+    "prepublish": "build"
   },
   "repository": {
     "type": "git",
@@ -20,14 +21,10 @@
     "url": "https://github.com/tec27/filmstrip2gif/issues"
   },
   "homepage": "https://github.com/tec27/filmstrip2gif",
-  "dependencies": {
-    "animated_gif": "0.0.3",
-    "brfs": "^1.2.0",
-    "data-uri-to-blob": "0.0.4"
-  },
-  "browserify": {
-    "transform": [
-      "brfs"
-    ]
+  "devDependencies": {
+    "animated_gif": "^1.0.2",
+    "data-uri-to-blob": "0.0.4",
+    "raw-loader": "^0.5.1",
+    "webpack": "^2.6.1"
   }
 }

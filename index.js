@@ -1,12 +1,8 @@
-var fs = require('fs')
-
-var workerScriptSrc =
-    fs.readFileSync(__dirname + '/Animated_GIF.worker.min.js', { encoding: 'utf8' })
+import workerScriptSrc from 'raw-loader!animated_gif/src/Animated_GIF.worker.js'
+import AnimatedGif from 'animated_gif'
+import toBlob from 'data-uri-to-blob'
 
 var workerScriptBlob = new Blob([ workerScriptSrc ], { type: 'text/javascript' })
-
-var AnimatedGif = require('animated_gif/src/Animated_GIF.js')
-  , toBlob = require('data-uri-to-blob')
 
 module.exports = function(imgSrc, duration, numFrames, isHorizontal, cb) {
   var frameDuration = duration / numFrames
