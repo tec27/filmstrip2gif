@@ -4,7 +4,7 @@ import toBlob from 'data-uri-to-blob'
 
 var workerScriptBlob = new Blob([ workerScriptSrc ], { type: 'text/javascript' })
 
-module.exports = function(imgSrc, duration, numFrames, isHorizontal, cb) {
+export default function(imgSrc, duration, numFrames, isHorizontal, cb) {
   var frameDuration = duration / numFrames
     , recordingElem = document.createElement('img')
     , uriData = getSrcUri(imgSrc)
