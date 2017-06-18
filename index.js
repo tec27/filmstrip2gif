@@ -6,8 +6,7 @@ export default function(imgSrc, duration, numFrames, isHorizontal, cb) {
   var frameDuration = duration / numFrames
     , recordingElem = document.createElement('img')
     , uriData = getSrcUri(imgSrc)
-    , workerScriptUri = window.URL.createObjectURL(workerScriptBlob)
-    , gifCreator = new AnimatedGif({ workerPath: workerScriptUri })
+    , gifCreator = new AnimatedGif()
     , canvas = document.createElement('canvas')
     , context = canvas.getContext('2d')
 
@@ -47,7 +46,6 @@ export default function(imgSrc, duration, numFrames, isHorizontal, cb) {
   })
 
   function cleanup() {
-    window.URL.revokeObjectURL(workerScriptUri)
     uriData.cleanup()
     gifCreator.destroy()
     delete recordingElem.src
